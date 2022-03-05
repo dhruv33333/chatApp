@@ -7,7 +7,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 
 const mongoose = require('mongoose');
-
+const db = require('./config/mongoose');
 
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
@@ -25,9 +25,6 @@ const { SocketAddress } = require('net');
 const io = socketio(server);
 
 
-mongoose.connect('mongodb://localhost:27017/chat-app-db')
-    .then(() => console.log('DB Connected'))
-    .catch((err) => console.log(err));
 
 
 app.set('view engine', 'ejs');
@@ -72,10 +69,6 @@ passport.deserializeUser(User.deserializeUser());
 
 
 app.use(authRoutes);
-
-// app.get('/', (req, res) => {
-//     res.render('home');
-// });
 
 
 

@@ -38,7 +38,11 @@ router.get('/register', (req, res) => {
 
 // register the new user to the database
 router.post('/register', async(req, res) => {
-
+    
+    if(req.body.password != req.body.confirmPassword) {
+        req.flash('error', 'Passwords do not match');
+        return res.redirect('/register');
+    }
     try{
 
         // console.log(req.body);
