@@ -3,6 +3,9 @@
 body {
     overflow: hidden;
     font-family: 'Roboto', sans-serif;
+    background-color: rgb(7, 128, 165);
+    background-color: rgb(115, 178, 194);
+    color: white;
 }
 section{
     width: 380px;
@@ -10,11 +13,13 @@ section{
 }
 
 #chat-box{
+    color: black;
     height: 50vh;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     padding: 16px;
     border-radius: 8px;
     margin-bottom: 10px;
+    background-color: white;
 }
 
 ul{
@@ -23,9 +28,10 @@ ul{
 
 li{
     border-radius: 8px;
-    border:1px solid #ccc;
-    margin:5px;
+    border:2px solid #ccc;
+    margin:7px;
     padding: 16px 10px;
+    box-shadow: 0px 0px 1px 1px lightgrey;
 }
 
 #chat-box{
@@ -49,5 +55,16 @@ a {
     border-radius: 5px;
 }
 #out:hover {
+    opacity: 0.7;
+}
+#send-btn {
+    width: 150px;
+    font-size: 18px;
+    background-color: green;
+    border: 4px solid green;
+    font-weight: 800;
+    color:white;
+}
+#send-btn:hover {
     opacity: 0.7;
 }
