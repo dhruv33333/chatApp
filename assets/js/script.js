@@ -10,9 +10,9 @@ $('#send-btn').click(function (data) {
     }
     const userName = $('#name').val();
 
-                 //property
+     
     socket.emit('send_msg', {
-        msg: msgText,   // data
+        msg: msgText,   
         user: userName
     });
     $('#inp-msg').val("");
