@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon ./index.js"
   },
-  "author": "Ashish",
+  "author": "Dhruv",
   "license": "ISC",
   "dependencies": {
     "connect-flash": "^0.1.1",

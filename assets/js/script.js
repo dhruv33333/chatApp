@@ -1,7 +1,6 @@
 const socket = io();
 
-
-
+// handling the send button
 $('#send-btn').click(function (data) {
 
     const msgText = $('#inp-msg').val();
@@ -18,27 +17,14 @@ $('#send-btn').click(function (data) {
     $('#inp-msg').val("");
 
 });
-
-
-
-
-
-
 socket.on('recieved_msg', (data) => {
     $('#chat').append(`<li> <strong>${data.user}</strong> : ${data.msg}</li>`)
     $("#chat-box").scrollTop($("#chat-box").outerHeight());
 });
 
-
-
-
-
-
-
+//handling login button
 $('#login-btn').click(function () {
     const user = $('#login-inp').val();
-
-    // console.log(user);
     
     socket.emit('login', {
         user: user

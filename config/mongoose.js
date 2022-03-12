@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//connecting to the database
 mongoose.connect('mongodb://localhost:27017/chat-app-db')
 
 const db = mongoose.connection;

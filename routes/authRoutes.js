@@ -27,8 +27,7 @@ router.post('/register', async (req, res) => {
         });
 
         const newUser = await User.register(user, password);
-
-
+        
         req.flash('success', 'Registeration Successful');
 
         res.redirect('/login');
@@ -47,8 +46,10 @@ router.get('/login', (req, res) => {
     res.render('login')
 })
 
+//user name variable
 var usern = "";
 
+//posting the login information after a succesfull login
 router.post('/login',
     passport.authenticate('local',
         {
@@ -63,9 +64,10 @@ router.post('/login',
         req.flash('success', `Welcome Back ${username} `);
         res.redirect('/startChat');
 
-    });
+});
 
 
+//getting the chat page
 router.get('/startChat', (req, res) => {
     if (usern == "") {
         return res.redirect('/login');
@@ -75,7 +77,7 @@ router.get('/startChat', (req, res) => {
     });
 });
 
-
+//logging out the user and redirecting to the home page
 router.get('/logout', (req, res) => {
     req.logout();
     usern = "";
@@ -83,7 +85,7 @@ router.get('/logout', (req, res) => {
     res.redirect('/');
 })
 
-
+//rendering the home page
 router.get('/', (req, res) => {
     res.render('home');
 });
